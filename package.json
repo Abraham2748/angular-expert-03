@@ -4,6 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "2024-10": "ng serve edition-2024-10",
+    "2025-01": "ng serve edition-2025-01",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

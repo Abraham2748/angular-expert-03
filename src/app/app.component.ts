@@ -1,13 +1,8 @@
-import { Component, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { LayoutService } from './layout.service';
-import { MediaQueriesComponent } from './media-queries/media-queries.component';
-import { NoMediaQueriesComponent } from './no-media-queries/no-media-queries.component';
-
+import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MediaQueriesComponent, NoMediaQueriesComponent],
+  imports: [],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
