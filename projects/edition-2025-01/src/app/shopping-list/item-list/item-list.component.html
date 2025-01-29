@@ -1,0 +1,9 @@
+<ul>
+  @for (item of shoppingListService.itemList; track $index) {
+  <li>
+    <span style="display: inline-block; width: 200px">{{ item }}</span
+    ><button (click)="edit($index)">Editar</button
+    ><button (click)="delete($index)">Eliminar</button>
+  </li>
+  }
+</ul>
