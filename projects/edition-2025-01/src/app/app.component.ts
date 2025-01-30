@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingListNgrxComponent } from './shopping-list-ngrx/shopping-list-ngrx.component';
 
 @Component({
   selector: 'app-root',
-  imports: [ShoppingListNgrxComponent],
+  imports: [ShoppingListComponent, ShoppingListNgrxComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

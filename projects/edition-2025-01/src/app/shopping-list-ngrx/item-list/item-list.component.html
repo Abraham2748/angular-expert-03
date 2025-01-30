@@ -1,7 +1,9 @@
 <ul>
+  @for (item of itemList$ | async; track $index) {
   <li>
-    <span style="display: inline-block; width: 200px">item 1</span
-    ><button (click)="edit(0)">Editar</button
-    ><button (click)="delete(0)">Eliminar</button>
+    <span style="display: inline-block; width: 200px">{{ item }}</span
+    ><button (click)="edit($index)">Editar</button
+    ><button (click)="delete($index)">Eliminar</button>
   </li>
+  }
 </ul>
