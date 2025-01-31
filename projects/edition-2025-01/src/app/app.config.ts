@@ -1,4 +1,8 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import {
+  ApplicationConfig,
+  isDevMode,
+  provideZoneChangeDetection,
+} from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -7,6 +11,7 @@ import { ngrxReducer } from './shopping-list-ngrx/store/ngrx.reducer';
 import { provideHttpClient } from '@angular/common/http';
 import { provideEffects } from '@ngrx/effects';
 import { NgrxEffect } from './shopping-list-ngrx/store/ngrx.effects';
+import { provideStoreDevtools } from '@ngrx/store-devtools';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -15,5 +20,6 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     provideStore({ main: ngrxReducer }),
     provideEffects(NgrxEffect),
+    provideStoreDevtools(),
   ],
 };
