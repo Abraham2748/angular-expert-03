@@ -12,3 +12,6 @@ export const selectItemFromDB = createSelector(
   selectMainState,
   (state) => state.itemFromDB
 );
+
+export const selectItemByIndex = (index: number) =>
+  createSelector(selectMainState, (state) => state.itemList[index]);

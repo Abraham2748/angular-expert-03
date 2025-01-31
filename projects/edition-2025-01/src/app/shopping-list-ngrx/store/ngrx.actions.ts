@@ -15,11 +15,11 @@ export const deleteItem = createAction(
   props<{ index: number }>()
 );
 
-// export const getItemFromDBAction = createAction(
-//   '[Shopping List Ngrx] Gets an item from an API'
-// );
+export const getItemFromDBAction = createAction(
+  '[Shopping List Ngrx] Gets an item from an API'
+);
 
-// export const getItemFromDBSuccessAction = createAction(
-//   '[Shopping List Ngrx] Get an item from an API was success',
-//   props<{ itemFromDB: string }>()
-// );
+export const getItemFromDBSuccessAction = createAction(
+  '[Shopping List Ngrx] Get an item from an API was success',
+  props<{ itemFromDB: string }>()
+);

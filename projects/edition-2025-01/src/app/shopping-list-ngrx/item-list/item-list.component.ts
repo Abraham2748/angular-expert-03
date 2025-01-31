@@ -1,6 +1,6 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { selectItemList } from '../store/ngrx.selectors';
+import { selectItemByIndex, selectItemList } from '../store/ngrx.selectors';
 import { AsyncPipe } from '@angular/common';
 import { deleteItem, editItem } from '../store/ngrx.actions';
 import { Subscription, take } from 'rxjs';
@@ -17,19 +17,14 @@ export class ItemListComponent {
 
   itemList$ = this.store.select(selectItemList);
 
-  itemList: string[] = [];
-  itemListSubscription = this.itemList$
-    .pipe(takeUntilDestroyed())
-    .subscribe((list) => {
-      this.itemList = list;
-    });
-
   edit(index: number) {
-    const oldItemValue = this.itemList[index];
-    const newItemValue = prompt(
-      `Ingresa un nuevo valor para "${oldItemValue}"`
-    )!;
-    this.store.dispatch(editItem({ index, newValue: newItemValue }));
+    this.store
+      .select(selectItemByIndex(index))
+      .pipe(take(1))
+      .subscribe((item) => {
+        const newItemValue = prompt(`Ingresa un nuevo valor para "${item}"`)!;
+        this.store.dispatch(editItem({ index, newValue: newItemValue }));
+      });
   }
 
   delete(index: number) {

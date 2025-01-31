@@ -1,7 +1,7 @@
 import {
   deleteItem,
   editItem,
-  // getItemFromDBSuccessAction,
+  getItemFromDBSuccessAction,
   saveItem,
 } from './ngrx.actions';
 import { NgRxState } from './ngrx.models';
@@ -28,8 +28,8 @@ export const ngrxReducer = createReducer(
     const newList = [...state.itemList];
     newList.splice(index, 1);
     return { ...state, itemList: newList };
+  }),
+  on(getItemFromDBSuccessAction, (state, { itemFromDB }) => {
+    return { ...state, itemFromDB };
   })
-  // on(getItemFromDBSuccessAction, (state, { itemFromDB }) => {
-  //   return { ...state, itemFromDB };
-  // })
 );
