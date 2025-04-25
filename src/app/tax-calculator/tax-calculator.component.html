@@ -1,0 +1,19 @@
+<div class="calculator">
+  <h3>Calculadora de Impuestos</h3>
+  <label>
+    Base:
+    <input type="number" [value]="base()" (input)="updateBase($event)" />
+  </label>
+  <label>
+    Tasa (%):
+    <input
+      type="number"
+      [value]="taxRate() * 100"
+      (input)="updateTaxRate($event)"
+    />
+  </label>
+  <div class="results">
+    <p>Impuesto: ${{ taxAmount().toFixed(2) }}</p>
+    <p>Total: ${{ total().toFixed(2) }}</p>
+  </div>
+</div>

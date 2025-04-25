@@ -1,0 +1,27 @@
+.calculator {
+  max-width: 320px;
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 0.25rem;
+  margin-top: 0.25rem;
+  box-sizing: border-box;
+}
+
+.results {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: #f9f9f9;
+  border-radius: 4px;
+}
