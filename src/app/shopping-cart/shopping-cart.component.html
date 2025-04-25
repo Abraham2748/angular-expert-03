@@ -1,0 +1,11 @@
+<div class="cart">
+  <h2>Carrito ({{ store.totalItems() }})</h2>
+  @for (item of store.items(); track $index) {
+  <p>Id: {{ item.id }}</p>
+  <p>Nombre: {{ item.name }}</p>
+  <p>Precio: {{ item.price }}</p>
+  <p>Cantidad: {{ item.quantity }}</p>
+  }
+
+  <button (click)="addItem()">Agregar producto de prueba</button>
+</div>
